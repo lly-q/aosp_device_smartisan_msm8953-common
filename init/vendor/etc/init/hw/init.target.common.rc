@@ -1,0 +1,52 @@
+on post-fs-data
+    mkdir /data/vendor/qcam 0770 camera camera
+    mkdir /data/vendor/qcam/raw/ 0770 camera camera
+    mkdir /data/misc/wapi_certificate 0770 system wifi
+
+on early-boot
+    # Graphics
+    chown system graphics /sys/class/graphics/fb0/idle_time
+    chown system graphics /sys/class/graphics/fb0/dyn_pu
+    chown system graphics /sys/class/graphics/fb0/dynamic_fps
+    chown system graphics /sys/class/graphics/fb0/modes
+    chown system graphics /sys/class/graphics/fb0/mode
+    chown system graphics /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+    chmod 0664 /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/dyn_pu
+    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
+    chmod 0664 /sys/class/graphics/fb0/modes
+    chmod 0664 /sys/class/graphics/fb0/mode
+    chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+
+on boot
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
+    mkdir /dev/cpuset/dex2oat
+    write /dev/cpuset/dex2oat/cpus 0-4
+    write /dev/cpuset/dex2oat/mems 0
+    chown system system /dev/cpuset/dex2oat
+    chown system system /dev/cpuset/dex2oat/tasks
+    chmod 0666 /dev/cpuset/dex2oat/tasks
+
+    # Vibrator
+    chown system system /sys/class/timed_output/vibrator/vtg_default
+    chown system system /sys/class/timed_output/vibrator/vtg_level
+    chown system system /sys/class/timed_output/vibrator/vtg_max
+    chown system system /sys/class/timed_output/vibrator/vtg_min
+
+    # Keypad
+    chown system system /proc/keypad/volume_up
+    chown system system /proc/keypad/volume_down
+    chown system system /proc/keypad/home_touch
+    chown system system /proc/keypad/home_press
+    chown system system /proc/keypad/power
+    chown system system /proc/keypad/shortcuts
+
+service ifaad /system/bin/ifaad
+    class late_start
+    user  system
+    group system
+
+on property:sys.boot_completed=1
+    restart cameraserver

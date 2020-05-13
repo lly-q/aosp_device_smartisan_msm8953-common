@@ -1,0 +1,42 @@
+# Audio
+etc/drc/drc_cfg_5.1.txt:vendor/etc/drc/drc_cfg_5.1.txt
+etc/drc/drc_cfg_AZ.txt:vendor/etc/drc/drc_cfg_AZ.txt
+etc/surround_sound_3mic/surround_sound_rec_5.1.cfg:vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
+etc/surround_sound_3mic/surround_sound_rec_AZ.cfg:vendor/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
+
+# Bluetooth firmware
+etc/firmware/nvm_tlv.bin:vendor/firmware/nvm_tlv.bin
+etc/firmware/nvm_tlv_1.3.bin:vendor/firmware/nvm_tlv_1.3.bin
+etc/firmware/nvm_tlv_2.1.bin:vendor/firmware/nvm_tlv_2.1.bin
+etc/firmware/nvm_tlv_3.0.bin:vendor/firmware/nvm_tlv_3.0.bin
+etc/firmware/nvm_tlv_3.2.bin:vendor/firmware/nvm_tlv_3.2.bin
+etc/firmware/rampatch_tlv.img:vendor/firmware/rampatch_tlv.img
+etc/firmware/rampatch_tlv_1.3.tlv:vendor/firmware/rampatch_tlv_1.3.tlv
+etc/firmware/rampatch_tlv_2.1.tlv:vendor/firmware/rampatch_tlv_2.1.tlv
+etc/firmware/rampatch_tlv_3.0.tlv:vendor/firmware/rampatch_tlv_3.0.tlv
+etc/firmware/rampatch_tlv_3.2.tlv:vendor/firmware/rampatch_tlv_3.2.tlv
+
+# HBTP
+etc/firmware/hbtp/hbtpcfg.dat:vendor/firmware/hbtp/hbtpcfg.dat
+etc/firmware/hbtp/qtc800s_dsp.bin:vendor/firmware/hbtp/qtc800s_dsp.bin
+
+# IFAA (Fingerprint support for Alipay)
+-framework/ifaa_fw.jar
+bin/ifaad
+lib/libifaa_daemon.so
+lib/libifaa_jni.so
+lib64/lib_ifaa_tac.so
+lib64/libifaa_daemon.so
+lib64/libifaa_jni.so
+
+# USB firmware
+etc/firmware/ice40.bin:vendor/firmware/ice40.bin
+
+# Thermal
+vendor/bin/thermal-engine
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
+vendor/lib64/libthermalioctl.so
+
+# Wi-Fi
+etc/firmware/wlan/prima/WCNSS_cfg.dat:vendor/firmware/wlan/prima/WCNSS_cfg.dat
